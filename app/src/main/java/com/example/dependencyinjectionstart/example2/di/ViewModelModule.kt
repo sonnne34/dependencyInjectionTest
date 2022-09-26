@@ -6,17 +6,18 @@ import com.example.dependencyinjectionstart.example2.presentation.ExampleViewMod
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import dagger.multibindings.StringKey
 
 @Module
 interface ViewModelModule {
 
     @IntoMap
-    @ViewModelKey(ExampleViewModel::class)
+    @StringKey("ExampleViewModel")
     @Binds
-    fun bindExampleViewModel(impl: ExampleViewModel): ViewModel
+    fun bindViewModelModule(viewModel: ExampleViewModel): ViewModel
 
     @IntoMap
-    @ViewModelKey(ExampleViewModel2::class)
+    @StringKey("ExampleViewModel2")
     @Binds
-    fun bindExampleViewModel2(impl: ExampleViewModel2): ViewModel
+    fun bindViewModelModule2(viewModel2: ExampleViewModel2): ViewModel
 }
