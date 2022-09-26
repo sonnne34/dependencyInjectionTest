@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         (application as ExampleApp).component
             .activityComponentFactory()
             .create("MY_ID")
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
